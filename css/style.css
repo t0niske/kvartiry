@@ -448,3 +448,22 @@ body.fs .crumb{display:none}
   .sheet.min{cursor:pointer}
 }
 @media (max-width:760px){.cpanel.min .cp-grid,.cpanel.min .lbl,.cpanel.min .chips{visibility:hidden}}
+
+/* v3.3: хиро — выравнивание цифр, мобильная раскладка */
+.hero{height:auto;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+.hero-in{padding-top:110px;padding-bottom:120px;width:100%}
+.hero-stats{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;column-gap:56px;row-gap:6px;margin-top:48px}
+.hero-stats>div{display:flex;flex-direction:column;gap:8px}
+.hero-stats b,.hero-stats b.odo{display:flex;align-items:flex-start;height:1.15em;line-height:1.15em;font-size:30px;font-variant-numeric:tabular-nums}
+.hero-stats small{line-height:1.3}
+@media (max-height:820px) and (min-width:761px){.scroll-cue{display:none}.hero-stats{margin-top:36px}}
+@media (max-width:1100px){.scroll-cue{display:none}}
+@media (max-width:760px){
+  .hero{min-height:0;justify-content:flex-start}
+  .hero-in{padding-top:96px;padding-bottom:20px}
+  .hero-stats{grid-template-columns:repeat(3,1fr);column-gap:12px;margin-top:32px}
+  .hero-stats b,.hero-stats b.odo{font-size:22px}
+  .hero-stats small{font-size:12px}
+  .hero-pick{position:relative;left:auto;right:auto;bottom:auto;display:flex;flex-direction:row;align-items:center;gap:8px;overflow-x:auto;padding:4px 20px 36px;scrollbar-width:none}
+  .hero-pick::-webkit-scrollbar{display:none}
+}
