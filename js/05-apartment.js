@@ -200,7 +200,7 @@ function applyRoom(r, fid, anim){
   const [col, inten] = LIGHT[fid]; r.light.color.setHex(col); gsap.to(r.light, {intensity: inten, duration: anim ? 1 : 0});
 }
 function setFinish(id, anim = true){
-  state.finish = id; $$('.fin').forEach(b => b.classList.toggle('on', b.dataset.f === id)); updatePrices();
+  state.finish = id; $$('.fin').forEach(b => b.classList.toggle('on', b.dataset.f === id)); updatePrices(); updateFinPhoto(id);
   const A = state.as; if (!A) return;
   if (!anim){ A.rooms.forEach(r => applyRoom(r, id, false)); return }
   const tok = ++A.token; A.rooms.forEach(r => r._done = false); A.sweep.visible = true;

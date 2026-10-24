@@ -326,7 +326,7 @@ async function init(){
   applyHomeOffset(); prog(100, 'Готово');
   loadFavs();
 
-  buildHome();
+  buildHome(); initGallery();
   $('#finishes').innerHTML = FINISHES.map(f => '<button class="fin" data-f="' + f.id + '"><div class="fin-top"><span class="fin-name">' + f.name + '</span><span class="fin-badge">' + f.badge + '</span></div>' +
     '<div class="fin-more"><div class="fin-desc">' + f.desc + '</div><ul>' + f.inc.map(x => '<li>' + x + '</li>').join('') + '</ul></div>' +
     '<div class="fin-price">' + (f.ppm ? '+ ' + fmt(f.ppm) + ' ' + CUR + '/м² · ' + f.term : 'Включено в стоимость') + '</div></button>').join('');

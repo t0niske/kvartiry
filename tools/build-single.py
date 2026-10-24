@@ -7,5 +7,7 @@ html = html.replace('<link rel="stylesheet" href="css/style.css">', '<style>\n' 
 def inline(m):
     return '<script>' + (R / m.group(1)).read_text().replace('</script', '<\\/script') + '</script>'
 html = re.sub(r'<script src="([^"]+)" defer></script>', inline, html)
+# визуализации (≈4 МБ WebP) не встраиваем — офлайн-файл берёт их с GitHub Pages
+html = html.replace('</head>', '<script>window.IMG_BASE = "https://t0niske.github.io/kvartiry/img/"</script>\n</head>', 1)
 out = R / 'dist'; out.mkdir(exist_ok=True); (out / 'dogma.html').write_text(html)
 print('dist/dogma.html', len(html) // 1024, 'KB')

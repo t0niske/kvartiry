@@ -19,7 +19,7 @@
 <div id="home">
   <header class="hdr" id="hdr"><div class="wrap hdr-in">
     <a class="logo" href="#top">DOGMA<span>.</span></a>
-    <nav class="nav"><a href="#projects">Проекты</a><a href="#finish">Отделка</a><a href="#mortgage">Ипотека</a><a href="#contacts">Контакты</a></nav>
+    <nav class="nav"><a href="#projects">Проекты</a><a href="#gallery">Визуализации</a><a href="#finish">Отделка</a><a href="#mortgage">Ипотека</a><a href="#contacts">Контакты</a></nav>
     <div class="hdr-r"><a class="phone" href="tel:88000000000">8 800 000-00-00</a><button class="ibtn glass favBtn" title="Подборка клиента">♥<span>Подборка</span><b class="favN"></b></button><a class="btn sm" href="#projects">Подобрать квартиру</a></div>
   </div></header>
 
@@ -46,13 +46,21 @@
     <div class="pgrid" id="pgrid"></div>
   </div></section>
 
-  <section class="sec alt" id="finish"><div class="wrap">
+  <section class="sec alt" id="gallery"><div class="wrap">
+    <div class="sec-h"><div class="kicker">Визуализации</div><h2>Как будут выглядеть кварталы</h2>
+      <p>Фасады и дворы каждого комплекса: объёмная модель по генпланам и рендерам застройщика, доведённая до фотореализма. Нажмите на кадр, чтобы открыть во весь экран.</p></div>
+    <div class="chips gal-tabs" id="galTabs"></div>
+    <div class="gal" id="gal"></div>
+    <div class="gal-note">Демонстрационные визуализации, не официальные материалы застройщика.</div>
+  </div></section>
+
+  <section class="sec" id="finish"><div class="wrap">
     <div class="sec-h"><div class="kicker">Отделка</div><h2>Три состояния одной квартиры</h2>
-      <p>В 3D-модели любой квартиры можно переключить отделку и сразу увидеть, как изменится интерьер и итоговая стоимость.</p></div>
+      <p>Одна и та же кухня-гостиная в трёх вариантах. В 3D-модели любой квартиры можно переключить отделку и сразу увидеть, как изменится интерьер и итоговая стоимость.</p></div>
     <div class="fgrid" id="fgrid"></div>
   </div></section>
 
-  <section class="sec" id="mortgage"><div class="wrap mort">
+  <section class="sec alt" id="mortgage"><div class="wrap mort">
     <div class="mort-l">
       <div class="kicker">Ипотека</div><h2>Рассчитайте платёж</h2>
       <p>Предварительный расчёт. Точные условия зависят от банка и программы.</p>
@@ -72,7 +80,7 @@
     </div>
   </div></section>
 
-  <section class="sec alt" id="features"><div class="wrap">
+  <section class="sec" id="features"><div class="wrap">
     <div class="sec-h"><div class="kicker">Как это работает</div><h2>Квартира до покупки — как после</h2></div>
     <div class="feat">
       <div class="ft"><div class="ft-i">01</div><h4>Выбор на фасаде</h4><p>Свободные, забронированные и проданные квартиры видны прямо на 3D-модели дома.</p></div>
@@ -82,7 +90,7 @@
     </div>
   </div></section>
 
-  <section class="sec" id="contacts"><div class="wrap contact">
+  <section class="sec alt" id="contacts"><div class="wrap contact">
     <div>
       <div class="kicker">Контакты</div><h2>Подберём квартиру под ваш запрос</h2>
       <p>Расскажите, что ищете, — пришлём подборку и пригласим на экскурсию по комплексу.</p>
@@ -123,6 +131,7 @@
       <div class="cp-head"><div class="cp-kicker" id="cpClass"></div>
       <h2 id="cpName"></h2><div class="cp-peek" id="cpPeek"></div></div>
       <div class="cp-dist" id="cpDist"></div>
+      <button class="cp-rend" id="cpRenders"><i>⤢</i>Фото фасадов и двора</button>
       <div class="cp-grid">
         <div><small>Свободно</small><b class="odo" id="oFree"></b></div>
         <div><small>Заселение до</small><b id="cpDead"></b></div>
@@ -193,6 +202,7 @@
     <div class="facts" id="facts"></div>
     <div class="lbl">Вариант отделки</div>
     <div class="finishes" id="finishes"></div>
+    <button class="fin-photo" id="finPhoto"><i></i><span><b>Фото отделки</b><small>Кухня-гостиная и спальня</small></span><em>⤢</em></button>
     <div class="prices">
       <div class="prow"><span>Квартира</span><b class="odo" id="oApt"></b></div>
       <div class="prow"><span>Отделка</span><b class="odo" id="oFin"></b></div>
@@ -244,6 +254,15 @@
   </div>
 </div></div>
 
+<!-- визуализации -->
+<div class="modal lb hidden" id="lbM"><div class="box lb-box">
+  <button class="x" data-close aria-label="Закрыть">×</button>
+  <div class="chips lb-tabs" id="lbTabs"></div>
+  <div class="lb-stage" id="lbStage"><img id="lbImg" alt=""><button class="lb-nav prev" id="lbPrev" aria-label="Назад">‹</button><button class="lb-nav next" id="lbNext" aria-label="Вперёд">›</button></div>
+  <div class="lb-f"><div class="lb-cap" id="lbCap"></div><div class="lb-thumbs" id="lbThumbs"></div></div>
+  <div class="lb-note">Демо-визуализация: модель в Blender + фотореалистичная доводка</div>
+</div></div>
+
 <div id="curtain"><div><div id="curT"></div><div id="curS"></div><div class="cur-line"></div></div></div>
 <div class="modal hidden" id="modal"><div class="box glass">
   <button class="x" data-close>×</button>
@@ -268,5 +287,6 @@
 <script src="js/08-main.js" defer></script>
 <script src="js/09-tools.js" defer></script>
 <script src="js/10-sheet.js" defer></script>
+<script src="js/11-gallery.js" defer></script>
 </body>
 </html>
