@@ -22,13 +22,13 @@ const FINISHES = [
 ];
 const FIN = Object.fromEntries(FINISHES.map(f => [f.id, f]));
 
-/* Стили фасадов (по рендерам и фото проектов) */
+/* Стили фасадов (сверены с официальными визуализациями dogma.ru, 10.2026) */
 const STYLES = {
-  rekord:  {wall:'brick',   color:'#9e4a32', frame:'#252628', band:'#252628', glaze:'ribbon', podium:'#cfc2aa', podiumWall:'stone', cap:'#2a2b2e', glass:'#5d7283', led:true, balcony:3},
-  samT:    {wall:'brick',   color:'#b8693f', frame:'#2b2a29', band:'#d6cbbb', glaze:'tall',   podium:'#d3c4ab', podiumWall:'stone', cap:'#2b2a29', glass:'#5b6d7c'},
-  samW:    {wall:'plaster', color:'#ebe8e2', frame:'#2f3134', band:'#cbc5bb', glaze:'punched',podium:'#dad5cc', podiumWall:'plaster', cap:'#a3352c', glass:'#5f7383', accent:'#a3352c'},
+  rekord:  {wall:'brick',   color:'#a9502f', frame:'#252628', band:'#252628', glaze:'ribbon', podium:'#cfc2aa', podiumWall:'stone', cap:'#2a2b2e', glass:'#5d7283', led:true, balcony:3},
+  samT:    {wall:'brick',   color:'#3a3533', frame:'#c79c52', band:'#c79c52', glaze:'tall',   podium:'#3b322c', podiumWall:'stone', cap:'#c79c52', glass:'#5b6d7c'},
+  samW:    {wall:'brick',   color:'#c4bbae', frame:'#2f3134', band:'#6a5546', glaze:'punched',podium:'#3b322c', podiumWall:'stone', cap:'#2f3134', glass:'#5f7383', accent:'#6a5546'},
   reeds:   {wall:'brick',   color:'#6e2d2e', frame:'#1d1d1f', band:null,      glaze:'grid',   podium:'#2b2b2d', podiumWall:'stone', cap:'#1d1d1f', glass:'#506372'},
-  park:    {wall:'plaster', color:'#dacdb6', frame:'#8a6a46', band:'#3b332c', glaze:'french', podium:'#3b332c', podiumWall:'stone', cap:'#3b332c', glass:'#55687a', lower:{color:'#3d342d', wall:'brick', floors:7}}
+  park:    {wall:'brick',   color:'#b9b3ab', frame:'#a8875f', band:'#e8e2d6', glaze:'french', podium:'#2f2a27', podiumWall:'stone', cap:'#a8875f', glass:'#55687a', lower:{color:'#4e3c33', wall:'brick', floors:7}}
 };
 
 /* Корпуса: x,z — центр, r — поворот, w×d — габарит, f — этажей (с первым), s — стиль, c — свой цвет фасада.

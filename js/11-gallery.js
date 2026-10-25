@@ -2,8 +2,8 @@
    Фотореалистичные визуализации: секция на главной, фото отделок, лайтбокс
    Картинки: модель в Blender (tools/blender) + доводка нейросетью, WebP 800/1600 px
    ========================================================= */
-const SHOTS = {aerial: 'Квартал с высоты', yard: 'Двор без машин'};
-const ROOMS = {living: 'Кухня-гостиная', bedroom: 'Спальня'};
+const SHOTS = {aerial: 'Квартал с высоты', yard: 'Двор без машин', street: 'Вид с улицы'};
+const ROOMS = {living: 'Кухня-гостиная', bed: 'Спальня', bath: 'Санузел', hall: 'Прихожая'};
 const IMG = window.IMG_BASE || 'img/';   // в офлайн-файле dist/dogma.html — адрес GitHub Pages
 const imgSrc = (dir, name, big) => IMG + dir + '/' + name + '-' + (big && !LITE ? 1600 : 800) + '.webp';
 const imgSet = (dir, name) => LITE ? '' : ' srcset="' + IMG + dir + '/' + name + '-800.webp 800w, ' + IMG + dir + '/' + name + '-1600.webp 1600w"';
